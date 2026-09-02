@@ -1,0 +1,15 @@
+.card {
+  padding: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHover {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.cardHover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}

@@ -1,0 +1,14 @@
+.small {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.medium {
+  padding: 12px 24px;
+  font-size: 1rem;
+}
+
+.large {
+  padding: 16px 32px;
+  font-size: 1.125rem;
+}

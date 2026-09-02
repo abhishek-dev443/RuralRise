@@ -1,0 +1,47 @@
+.header {
+  padding: 16px 0;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.navLinks a {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.navLinks a:hover {
+  color: var(--primary);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.loginBtn {
+  margin-right: 12px;
+}

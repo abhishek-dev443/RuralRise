@@ -1,0 +1,32 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 20px 0;
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  text-align: center;
+  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.08) 0%, transparent 60%);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
