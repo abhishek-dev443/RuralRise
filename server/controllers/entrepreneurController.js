@@ -43,10 +43,17 @@ const upsertStorefront = async (req, res, next) => {
 // @access  Public
 const getPublicStorefronts = async (req, res, next) => {
   try {
-    const { district, category } = req.query;
+    const { district, category, search } = req.query;
     let whereClause = {};
     if (district) whereClause.district = district;
     if (category) whereClause.businessCategory = category;
+    if (search) {
+      whereClause.OR = [
+        { storeName: { contains: search, mode: 'insensitive' } },
+        { ownerName: { contains: search, mode: 'insensitive' } },
+        { description: { contains: search, mode: 'insensitive' } }
+      ];
+    }
 
     const storefronts = await prisma.entrepreneurProfile.findMany({
       where: whereClause,
@@ -85,8 +92,31 @@ const getStorefrontBySlug = async (req, res, next) => {
   }
 };
 
+// @desc    Get current entrepreneur profile
+// @route   GET /api/entrepreneurs/me
+// @access  Private (SELLER)
+const getMe = async (req, res, next) => {
+  try {
+    const profile = await prisma.entrepreneurProfile.findUnique({
+      where: { userId: req.user.id },
+      include: {
+        products: true
+      }
+    });
+
+    if (!profile) {
+      return res.status(404).json({ error: 'Profile not found' });
+    }
+
+    res.status(200).json(profile);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   upsertStorefront,
   getPublicStorefronts,
-  getStorefrontBySlug
+  getStorefrontBySlug,
+  getMe
 };
