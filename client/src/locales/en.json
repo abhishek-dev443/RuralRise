@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "admin": "Admin"
+  },
+  "home": {
+    "title": "From Local Roots to Wider Reach",
+    "subtitle": "Discover authentic rural products directly from entrepreneurs in Maharashtra."
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "stats": "Platform Stats",
+    "verifications": "Verification Requests",
+    "entrepreneurs": "Entrepreneurs"
+  }
+}

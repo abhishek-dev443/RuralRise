@@ -97,6 +97,9 @@ model Order {
   customer         User                 @relation(fields: [customerId], references: [id])
   totalAmount      Float
   status           OrderStatus          @default(PENDING)
+  pickupAddress    String?
+  deliveryAddress  String?
+  logisticsNotes   String?
   createdAt        DateTime             @default(now())
   updatedAt        DateTime             @updatedAt
   orderItems       OrderItem[]
